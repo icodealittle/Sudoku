@@ -29,14 +29,14 @@ def game_board(board):
             if b == 8:
                 print(board[a][b], end="\n")
             else:
-                print(str(board[a][b] + "  ", end=""))
+                print(str(board[a][b]) + "  ", end="")
 
 def validity(board, number, position):
     for a in range(len(board[0])):
         if board[position[0]][a] == number and position[1] != a:
             return False
 
-    for a in range(len(board[position])):
+    for a in range(len(board)):
         if board[a][position[1]] == number and position[1] != a:
             return False
 
