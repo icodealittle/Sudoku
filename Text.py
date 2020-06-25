@@ -21,15 +21,15 @@ def empty(board):
 def game_board(board):
     for a in range(len(board)):
         if a % 3 == 0 and a != 0:
-            print("===============================")
+            print("==================================================")
         for b in range(len(board[0])):
             if b % 3 == 0:
-                print(" || ", end="")
+                print(" ", end=" || ")
 
             if b == 8:
                 print(board[a][b], end="\n")
             else:
-                print(str(board[a][b]) + "  ", end="")
+                print(str(board[a][b]) + "  ", end=" ")
 
 def validity(board, number, position):
     for a in range(len(board[0])):
@@ -73,5 +73,5 @@ def solve_board(board):
 
 game_board(board)
 solve_board(board)
-print("==============================")
+print("==================================================")
 game_board(board)
