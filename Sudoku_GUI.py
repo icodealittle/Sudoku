@@ -233,8 +233,8 @@ def valid(bo, num, pos):
 def redraw_window(win, board, time, strikes):
     win.fill((255,255,255))
     # Draw time
-    fnt = pygame.font.SysFont("comicsans", 40)
-    text = fnt.render("Time: " + format_time(time), 1, (0,0,0))
+    fnt = pygame.font.SysFont("Times New Roman", 40)
+    text = fnt.render("Time: " + format_time(time), 1, (0, 0, 0))
     win.blit(text, (540 - 160, 560))
     # Draw Strikes
     text = fnt.render("X " * strikes, 1, (255, 0, 0))
@@ -254,7 +254,7 @@ def format_time(secs):
 
 def main():
     win = pygame.display.set_mode((540,600))
-    pygame.display.set_caption("Sudoku")
+    pygame.display.set_caption("Sudoku Python Game")
     board = Grid(9, 9, 540, 540, win)
     key = None
     run = True
@@ -297,14 +297,14 @@ def main():
                     i, j = board.selected
                     if board.cubes[i][j].temp != 0:
                         if board.place(board.cubes[i][j].temp):
-                            print("Success")
+                            print("You got this")
                         else:
-                            print("Wrong")
+                            print("Incorrect. Please try again")
                             strikes += 1
                         key = None
 
                         if board.is_finished():
-                            print("Game over")
+                            print("Game Over")
 
             if event.type == pygame.MOUSEBUTTONDOWN:
                 pos = pygame.mouse.get_pos()
